@@ -80,10 +80,11 @@ class LangServiceProvider extends XotBaseServiceProvider
         Column::configureUsing(function (Column $component) {
             $component = app(AutoLabelAction::class)->execute($component);
 
-            $component= $component->wrapHeader()
+            $component = $component->wrapHeader()
                     ->verticallyAlignStart()
                     ->grow()
                     ->wrap();
+
             return $component;
         });
         Step::configureUsing(function (Step $component) {
