@@ -1,103 +1,122 @@
 <?php
-
-declare(strict_types=1);
-
-return [
-    'fields' => [
-        'created_at' => [
+return array(
+    'fields' =>
+    array(
+        'created_at' =>
+        array(
             'fields' => 'created_at',
-            'label' => [
+            'label' =>
+            array(
                 'fields' => 'created_at',
-            ],
-        ],
-        'values' => [
+            ),
+        ),
+        'values' =>
+        array(
             'fields' => 'values',
-            'label' => [
+            'label' =>
+            array(
                 'fields' => 'values',
-            ],
-        ],
-        'value' => [
+            ),
+        ),
+        'value' =>
+        array(
             'label' => 'value',
-        ],
-        'email' => [
+        ),
+        'email' =>
+        array(
             'label' => 'email',
-        ],
-        'password' => [
+        ),
+        'password' =>
+        array(
             'label' => 'password',
-        ],
-        'remember' => [
+        ),
+        'remember' =>
+        array(
             'label' => 'remember',
-        ],
-        'assetType' => [
-            'name' => [
+        ),
+        'assetType' =>
+        array(
+            'name' =>
+            array(
                 'label' => 'assetType.name',
-            ],
-        ],
-        'description' => [
-            'label' => 'Descrizione',
-        ],
-        'parent_id' => [
+            ),
+        ),
+        'description' =>
+        array(
+            'label' => 'description',
+        ),
+        'parent_id' =>
+        array(
             'label' => 'parent_id',
-        ],
-        'technician_name' => [
+        ),
+        'technician_name' =>
+        array(
             'label' => 'technician_name',
-        ],
-        'serial_number' => [
+        ),
+        'serial_number' =>
+        array(
             'label' => 'serial_number',
-        ],
-        'brand' => [
-            'label' => 'Marca',
-        ],
-        'model' => [
-            'label' => 'Modello',
-        ],
-        'area' => [
-            'name' => [
+        ),
+        'brand' =>
+        array(
+            'label' => 'brand',
+        ),
+        'model' =>
+        array(
+            'label' => 'model',
+        ),
+        'area' =>
+        array(
+            'name' =>
+            array(
                 'label' => 'area.name',
-            ],
-        ],
-        'save' => [
+            ),
+        ),
+        'save' =>
+        array(
             'label' => 'save',
-        ],
-        'cancel' => [
+        ),
+        'cancel' =>
+        array(
             'label' => 'cancel',
-        ],
-        'creator' => [
-            'name' => [
+        ),
+        'creator' =>
+        array(
+            'name' =>
+            array(
                 'label' => 'creator.name',
-            ],
-        ],
-        'file' => [
-            'label' => 'file',
-        ],
-        'password_expires_at' => [
-            'label' => 'password_expires_at',
-        ],
-    ],
-    'actions' => [
-        'save' => [
+            ),
+        ),
+        'isActive' =>
+        array(
+            'label' => 'isActive',
+        ),
+    ),
+    'actions' =>
+    array(
+        'save' =>
+        array(
             'label' => 'save',
-        ],
-        'cancel' => [
+        ),
+        'cancel' =>
+        array(
             'label' => 'cancel',
-        ],
-        'authenticate' => [
+        ),
+        'authenticate' =>
+        array(
             'label' => 'authenticate',
-        ],
-        'downloadExample' => [
+        ),
+        'downloadExample' =>
+        array(
             'label' => 'downloadExample',
-        ],
-        'create' => [
+        ),
+        'create' =>
+        array(
             'label' => 'create',
-        ],
-        'createAnother' => [
+        ),
+        'createAnother' =>
+        array(
             'label' => 'createAnother',
-        ],
-        'request' => [
-            'label' => 'request',
-        ],
-        'login' => [
-            'label' => 'login',
-        ],
-    ],
-];
+        ),
+    ),
+);
