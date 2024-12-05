@@ -10,31 +10,11 @@
         }
     ],
     "require": {
-        "mcamara/laravel-localization": "^2.0",
+        "mcamara/laravel-localization": "^2.2",
         "spatie/laravel-sluggable": "*"
     },
-    "require_comment": {
-        "php": "^8.1",
-        "illuminate/contracts": "^10.0",
-        "illuminate/support": "^10.0",
-        "laraxot/module_cms_fila3": "*",
-        "laraxot/module_user_fila3": "*",
-        "laraxot/module_tenant_fila3": "*",
-        "laraxot/module_xot_fila3": "*",
-        "spatie/laravel-package-tools": "^1.11.3",
-        "spatie/laravel-sluggable": "^3.4"
-    },
-    "require-dev_comment": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9",
-        "larastan/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+    "require-dev": {
+        
     },
     "repositories": [
         {
@@ -87,5 +67,4 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
-
 }

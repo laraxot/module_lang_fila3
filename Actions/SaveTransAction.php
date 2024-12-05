@@ -18,11 +18,25 @@ class SaveTransAction
      */
     public function execute(string $key, int|string|array|null $data): void
     {
+        $cont = [];
         $filename = app(GetTransPathAction::class)->execute($key);
-        $cont = File::getRequire($filename);
+        if (! File::exists($filename)) {
+            app(SaveArrayAction::class)->execute(data: $cont, filename: $filename);
+        }
+        try {
+            $cont = File::getRequire($filename);
+        } catch (\Exception $e) {
+            dddx([
+                'key' => $key,
+                'data' => $data,
+                'filename' => $filename,
+                'message' => $e->getMessage(),
+            ]);
+        }
         if (! is_array($cont)) {
             $cont = [];
         }
+
         $piece = implode('.', array_slice(explode('.', $key), 1));
         if ('' !== $piece) {
             Arr::set($cont, $piece, $data);

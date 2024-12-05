@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @see https://github.com/laravel/framework/discussions/49574
  */
@@ -23,9 +24,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 class Change extends Component
 {
     public string $lang;
-
     public array $langs;
-
     public string $url;
 
     public function mount(): void

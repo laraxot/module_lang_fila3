@@ -4,7 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
+use Filament\Actions\Action;
+use Filament\Forms\Components\Field;
+use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Wizard\Step;
+use Filament\Infolists\Components\Entry;
+use Filament\Support\Components\Component;
+use Filament\Support\Concerns\Configurable;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Filters\BaseFilter;
+use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Container\Container;
+use Illuminate\Support\Facades\View;
+use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use Modules\Xot\Services\BladeService;
@@ -25,7 +37,9 @@ class LangServiceProvider extends XotBaseServiceProvider
     {
         parent::boot();
         // BladeService::registerComponents($this->module_dir.'/../View/Components', 'Modules\\Lang');
-        $this->registerTranslator();
+        // $this->registerTranslator();
+        $this->translatableComponents();
+        $this->registerFilamentLabel();
     }
 
     public function register(): void
@@ -33,6 +47,67 @@ class LangServiceProvider extends XotBaseServiceProvider
         parent::register();
         // --dalla doc in register ... ma non funziona, funziona in boot
         // $this->registerTranslator();
+    }
+
+    protected function translatableComponents(): void
+    {
+        $components = [Field::class, BaseFilter::class, Placeholder::class, Column::class, Entry::class];
+        foreach ($components as $component) {
+            /* @var Configurable $component */
+            $component::configureUsing(function (Component $translatable): void {
+                /* @phpstan-ignore method.notFound */
+                $translatable->translateLabel();
+            });
+        }
+    }
+
+    public function registerFilamentLabel(): void
+    {
+        Field::configureUsing(function (Field $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            $component->validationMessages(__('user::validation'));
+
+            return $component;
+        });
+
+        BaseFilter::configureUsing(function (BaseFilter $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            return $component;
+        });
+
+        Column::configureUsing(function (Column $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            $component = $component->wrapHeader()
+                    ->verticallyAlignStart()
+                    ->grow()
+                    ->wrap();
+
+            return $component;
+        });
+        Step::configureUsing(function (Step $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            // ->translateLabel()
+            return $component;
+        });
+        Action::configureUsing(function (Action $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            // ->translateLabel()
+            return $component;
+        });
+        // Method Filament\Widgets\StatsOverviewWidget\Stat::configureUsing does not exist.
+        /*
+        Stat::configureUsing(function (Stat $component) {
+            $component = app(AutoLabelAction::class)->execute($component);
+
+            // ->translateLabel()
+            return $component;
+        });
+        */
     }
 
     public function registerTranslator(): void

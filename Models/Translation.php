@@ -59,7 +59,14 @@ class Translation extends BaseModel
 
     final public const STATUS_CHANGED = 1;
 
-    protected $fillable = ['id', 'lang', 'value', 'created_at', 'updated_at', 'namespace', 'group', 'item'];
+    protected $fillable = [
+        'id',
+        'lang',
+        'value',
+        'namespace',
+        'group',
+        'item',
+    ];
 
     // protected $table = 'ltm_translations';
     protected $guarded = ['id', 'created_at', 'updated_at'];
