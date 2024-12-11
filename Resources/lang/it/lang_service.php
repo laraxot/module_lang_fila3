@@ -1,122 +1,94 @@
 <?php
-return array(
-    'fields' =>
-    array(
-        'created_at' =>
-        array(
+
+declare(strict_types=1);
+
+return [
+    'fields' => [
+        'created_at' => [
             'fields' => 'created_at',
-            'label' =>
-            array(
+            'label' => [
                 'fields' => 'created_at',
-            ),
-        ),
-        'values' =>
-        array(
+            ],
+        ],
+        'values' => [
             'fields' => 'values',
-            'label' =>
-            array(
+            'label' => [
                 'fields' => 'values',
-            ),
-        ),
-        'value' =>
-        array(
+            ],
+        ],
+        'value' => [
             'label' => 'value',
-        ),
-        'email' =>
-        array(
+        ],
+        'email' => [
             'label' => 'email',
-        ),
-        'password' =>
-        array(
+        ],
+        'password' => [
             'label' => 'password',
-        ),
-        'remember' =>
-        array(
+        ],
+        'remember' => [
             'label' => 'remember',
-        ),
-        'assetType' =>
-        array(
-            'name' =>
-            array(
+        ],
+        'assetType' => [
+            'name' => [
                 'label' => 'assetType.name',
-            ),
-        ),
-        'description' =>
-        array(
+            ],
+        ],
+        'description' => [
             'label' => 'description',
-        ),
-        'parent_id' =>
-        array(
+        ],
+        'parent_id' => [
             'label' => 'parent_id',
-        ),
-        'technician_name' =>
-        array(
+        ],
+        'technician_name' => [
             'label' => 'technician_name',
-        ),
-        'serial_number' =>
-        array(
+        ],
+        'serial_number' => [
             'label' => 'serial_number',
-        ),
-        'brand' =>
-        array(
+        ],
+        'brand' => [
             'label' => 'brand',
-        ),
-        'model' =>
-        array(
+        ],
+        'model' => [
             'label' => 'model',
-        ),
-        'area' =>
-        array(
-            'name' =>
-            array(
+        ],
+        'area' => [
+            'name' => [
                 'label' => 'area.name',
-            ),
-        ),
-        'save' =>
-        array(
+            ],
+        ],
+        'save' => [
             'label' => 'save',
-        ),
-        'cancel' =>
-        array(
+        ],
+        'cancel' => [
             'label' => 'cancel',
-        ),
-        'creator' =>
-        array(
-            'name' =>
-            array(
+        ],
+        'creator' => [
+            'name' => [
                 'label' => 'creator.name',
-            ),
-        ),
-        'isActive' =>
-        array(
+            ],
+        ],
+        'isActive' => [
             'label' => 'isActive',
-        ),
-    ),
-    'actions' =>
-    array(
-        'save' =>
-        array(
+        ],
+    ],
+    'actions' => [
+        'save' => [
             'label' => 'save',
-        ),
-        'cancel' =>
-        array(
+        ],
+        'cancel' => [
             'label' => 'cancel',
-        ),
-        'authenticate' =>
-        array(
+        ],
+        'authenticate' => [
             'label' => 'authenticate',
-        ),
-        'downloadExample' =>
-        array(
+        ],
+        'downloadExample' => [
             'label' => 'downloadExample',
-        ),
-        'create' =>
-        array(
+        ],
+        'create' => [
             'label' => 'create',
-        ),
-        'createAnother' =>
-        array(
+        ],
+        'createAnother' => [
             'label' => 'createAnother',
-        ),
-    ),
-);
+        ],
+    ],
+];
