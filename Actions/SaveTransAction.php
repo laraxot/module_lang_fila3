@@ -16,7 +16,7 @@ class SaveTransAction
     /**
      * Undocumented function.
      */
-    public function execute(string $key, int|string|array|null $data): void
+    public function execute(string $key, int|string|array|\Illuminate\Contracts\Support\Htmlable|null $data): void
     {
         $cont = [];
         $filename = app(GetTransPathAction::class)->execute($key);

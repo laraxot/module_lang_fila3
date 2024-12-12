@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\Lang\Actions\Filament;
 
 use Filament\Actions\Action;
+use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Wizard\Step;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Filters\BaseFilter;
 use Illuminate\Support\Arr;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Xot\Actions\GetTransKeyAction;
@@ -19,6 +22,10 @@ class AutoLabelAction
     /**
      * Undocumented function.
      * return number of input added.
+     *
+     * @param Field|BaseFilter|Column|Step|Action $component
+     *
+     * @return Field|BaseFilter|Column|Step|Action
      */
     public function execute($component)
     {
@@ -53,6 +60,8 @@ class AutoLabelAction
                 app(SaveTransAction::class)->execute($label_key, $label_value);
             }
             $component->label($label);
+        } else {
+            $component->label('FIX:'.$label_key);
         }
 
         return $component;
