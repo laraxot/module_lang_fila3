@@ -34,11 +34,11 @@ class GetTransPathAction
         }
         $lang = app()->getLocale();
         $relativePath = config('modules.paths.generator.lang.path');
-        
+
         // Utilizziamo module_path e verifichiamo che restituisca una stringa
         $lang_path = module_path($ns, $relativePath);
         Assert::string($lang_path, 'Il percorso del modulo deve essere una stringa');
-        
+
         $file_name = $piece[0] ?? '';
         Assert::string($file_name, 'Il nome del file deve essere una stringa');
 
